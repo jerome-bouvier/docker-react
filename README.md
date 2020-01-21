@@ -1,3 +1,3 @@
 # react-front
 
-template project for gitlab
+template project for ci testing
