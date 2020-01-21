@@ -11,4 +11,4 @@ before_install:
 
 script:
   - docker run -e CI=true jeromeboubou/docker-react npm run test
-  - docker run -e CI=true jeromeboubou/docker-react npm run cypress ./node_modules/.bin/cypress run --config baseUrl=http://127.0.0.1
+  - docker run -e CI=true jeromeboubou/docker-react npm run cypress:run
