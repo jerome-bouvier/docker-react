@@ -2,8 +2,13 @@ sudo: required
 services:
   - docker
 
+cache:
+    directories:
+      - ~/.npm
+      - ~/.cache
 before_install:
   - docker build -t jeromeboubou/docker-react -f Dockerfile.dev .
 
 script:
   - docker run -e CI=true jeromeboubou/docker-react npm run test
+  - docker run -e CI=true jeromeboubou/docker-react npm run cypress ./node_modules/.bin/cypress run --config baseUrl=http://127.0.0.1
